@@ -1,6 +1,8 @@
 import turtle as t
 import time
 from snake import Snake
+from food import Food
+from scoreboard import Scoreboard
 import random
 
 screen = t.Screen()
@@ -10,6 +12,8 @@ screen.title("My Snake")
 screen.tracer(0)
 
 snake = Snake()
+food = Food()
+scoreboard = Scoreboard()
 
 
 screen.listen()
@@ -24,6 +28,12 @@ while gaming_is_not_over:
     time.sleep(0.1)
 
     snake.move()
+
+
+    #detect colision with food.
+    if snake.head.distance(food) < 15:
+        food.refresh()
+        scoreboard.score += 1
 
 
 
