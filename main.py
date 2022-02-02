@@ -33,7 +33,8 @@ while gaming_is_not_over:
     #detect colision with food.
     if snake.head.distance(food) < 15:
         food.refresh()
-        scoreboard.score += 1
+        scoreboard.increase_score()
+        #scoreboard.write(f"score: {scoreboard.score}", False, align='center', font=('Arial', 24, 'normal'))
 
 
 
